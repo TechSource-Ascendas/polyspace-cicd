@@ -137,7 +137,7 @@ int main(void)
     printf("  uninitialized_variable()  – UNINIT_VAR\n");
     printf("  dead_code(1)              – DEAD_CODE\n");
     printf("  out_of_bounds()           – ARRAY_OUT_OF_BOUNDS\n");
-    printf("  unchecked_return_value()  – RETURN_NOT_CHECKED\n");
+    // printf("  unchecked_return_value()  – RETURN_NOT_CHECKED\n");
 
     return 0;
 }
