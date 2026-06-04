@@ -9,7 +9,7 @@
  * This example will show you how selected defects will be handled by the
  * Polyspace Bug Finder.
  * Each defect is depicted in a specific function, and a sibling function
- * showing the fixed code is then shown. Test
+ * showing the fixed code is then shown.
  */
 
 #include <assert.h>
