@@ -41,16 +41,9 @@ pipeline {
 						-protocol http \
 						-login $USER \
 						-encrypted-password $PASS \
-						-create-project /public/${PROG}
-
-					/usr/local/Polyspace_Server/R2025b/polyspace/bin/polyspace-access \
-						-host localhost \
-						-port 9443 \
-						-protocol http \
-						-login $USER \
-						-encrypted-password $PASS \
 						-upload ${RESULT_DIR} \
-						-project /public/${PROG}
+						-project ${PROG} \
+						-parent-project /public
 					'''
 				}
 			}
