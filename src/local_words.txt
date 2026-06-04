@@ -1,0 +1,12 @@
+# --*-conf-*---
+# Local Words for sbspell and sbcheck -check typos
+# This file is automatically maintained by sbspell.
+# Copyright 2025 The MathWorks, Inc.
+
+LocalWords:  GNUC datarace ALGO DES AES ECB PKEY DSA OAEP PSS SHA Lv posix memalign realloc eflag
+LocalWords:  PRNG EVP BIGNUM xffffff vscanf strnlen stddef rw VLA buf intptr ptrdiff atoi errno
+LocalWords:  strtol exitabnormalhandler strtod tmp charactermisuse getchar MEMCMP strrchr memcmp abc
+LocalWords:  fflush EXCP UNPROTOTYPED FUNC BYTESWAP endian htonl ntohl fgetpos vaargincorrecttype va
+LocalWords:  toomanyvaargcalls func ENV envp pton UMASK CHROOT ftproot chdir rwx tmpfile XXXXXX
+LocalWords:  mkstemp ftime usr XXXXXXXX TOCTOU fdopen getlogin setgid pthread setkey glibc READLINK
+LocalWords:  readlink execv atof env nums userstr MYAPP execl
