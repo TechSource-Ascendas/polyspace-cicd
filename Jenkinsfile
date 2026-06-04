@@ -28,23 +28,32 @@ pipeline {
         }
 
         stage('Run Polyspace') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'demo user', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
-                    sh '''
-                    /usr/local/Polyspace_Server/R2025b/polyspace/bin/polyspace-bug-finder-server \
-                        -options-file ${PROG}.psopts \
-                        -results-dir ${RESULT_DIR}
+			steps {
+				withCredentials([usernamePassword(credentialsId: 'demo user', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+					sh '''
+					/usr/local/Polyspace_Server/R2025b/polyspace/bin/polyspace-bug-finder-server \
+						-options-file ${PROG}.psopts \
+						-results-dir ${RESULT_DIR}
 
-                    /usr/local/Polyspace_Server/R2025b/polyspace/bin/polyspace-access \
-                        -host localhost \
-                        -port 9443 \
-                        -protocol http \
-                        -login $USER \
-                        -encrypted-password $PASS \
-                        -create-project /public/${PROG}
-                    '''
-                }
-            }
-        }
+					/usr/local/Polyspace_Server/R2025b/polyspace/bin/polyspace-access \
+						-host localhost \
+						-port 9443 \
+						-protocol http \
+						-login $USER \
+						-encrypted-password $PASS \
+						-create-project /public/${PROG}
+
+					/usr/local/Polyspace_Server/R2025b/polyspace/bin/polyspace-access \
+						-host localhost \
+						-port 9443 \
+						-protocol http \
+						-login $USER \
+						-encrypted-password $PASS \
+						-upload ${RESULT_DIR} \
+						-project /public/${PROG}
+					'''
+				}
+			}
+		}
     }
 }
