@@ -106,13 +106,13 @@ void out_of_bounds(void)
 }
 
 /* ── 10. UNCHECKED RETURN VALUE ───────────────────────────────────────────── */
-// void unchecked_return_value(void)
-// {
-//    /* malloc return value must always be checked before use */
-//    int *p = (int *)malloc(sizeof(int));
-//    *p = 7;  /* BUG: p may be NULL if malloc failed – no NULL check */
-//    free(p);
-// }
+void unchecked_return_value(void)
+{
+   /* malloc return value must always be checked before use */
+   int *p = (int *)malloc(sizeof(int));
+   *p = 7;  /* BUG: p may be NULL if malloc failed – no NULL check */
+   free(p);
+}
 
 /* ── MAIN ─────────────────────────────────────────────────────────────────── */
 int main(void)
@@ -137,7 +137,7 @@ int main(void)
     printf("  uninitialized_variable()  – UNINIT_VAR\n");
     printf("  dead_code(1)              – DEAD_CODE\n");
     printf("  out_of_bounds()           – ARRAY_OUT_OF_BOUNDS\n");
-    // printf("  unchecked_return_value()  – RETURN_NOT_CHECKED\n");
+    printf("  unchecked_return_value()  – RETURN_NOT_CHECKED\n");
 
     return 0;
 }
